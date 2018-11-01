@@ -1,0 +1,23 @@
+    {
+      "name": "perl-MIME-Base64",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz",
+          "sha512": "2f1ce99f755d7ae25f6b1907e043c16f72799e0cc9aa8b5efe8bb1f0542fc6f39bff691b2477e18136d06dfb38f6a844c76018a7fa4e60591ebf0e60cfea55d4"
+        }
+      ]
+    }

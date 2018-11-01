@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Socket",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Socket-2.027.tar.gz",
+          "sha512": "f9a016ec3ecce4f7a75ce1630c05df15b774846e1de2dbbddaeb6b5f03665ff798e1a55a180b0ea83968b6f225ff857522593f570ac8c16c3a855b73be7881de"
+        }
+      ]
+    }

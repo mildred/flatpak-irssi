@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Compress-Raw-Bzip2",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/P/PM/PMQS/Compress-Raw-Bzip2-2.081.tar.gz",
+          "sha512": "fd3893677e3f76ece567f5f1f7529ee42b2c5afb7d4026a51bc17f4ddcf75b1513261c00655f28b0ae1af0144751031b7e8a53b377f7c6c69f338b18bc871e52"
+        }
+      ]
+    }

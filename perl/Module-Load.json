@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Module-Load",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/Module-Load-0.32.tar.gz",
+          "sha512": "54b32e6616d9fb747735fe1d6d715f56c6e99e12cb682a97bcf03b304dfcd8864ac19a46b45daa7834dfaa3f1101fc0e3cc3c9f782598d2e8b08f488c0a5cb73"
+        }
+      ]
+    }

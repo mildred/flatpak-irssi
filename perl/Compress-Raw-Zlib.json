@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Compress-Raw-Zlib",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/P/PM/PMQS/Compress-Raw-Zlib-2.081.tar.gz",
+          "sha512": "146cff0d21f047ce94a6208bcc227b3bb0037676afe41216d718858b7e11c37a013adb1b6a0aea75ba265b2b0e338d66f1049f6a01d27628753f49a4c644330d"
+        }
+      ]
+    }

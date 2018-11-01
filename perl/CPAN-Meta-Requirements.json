@@ -1,0 +1,23 @@
+    {
+      "name": "perl-CPAN-Meta-Requirements",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/CPAN-Meta-Requirements-2.140.tar.gz",
+          "sha512": "bebbc9479c97c5012cfe339c39c033f246c73616225832e4db5195979988494bbb68e15f954acb25b630b64e16417e9860a7e9c81caa4f5c5d05b70ccc036bcf"
+        }
+      ]
+    }

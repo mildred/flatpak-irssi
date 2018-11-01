@@ -1,0 +1,23 @@
+    {
+      "name": "perl-IPC-Cmd",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/IPC-Cmd-1.02.tar.gz",
+          "sha512": "acb6cb919c2215fed2fbbf15627878125e94a035fe15324eac307cc4bfab0d5cda2ec77e39569799f4999be31eab880f3b79e9516523ab984877ece8df4f74d2"
+        }
+      ]
+    }

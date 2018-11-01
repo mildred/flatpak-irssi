@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Pod-Man",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/R/RR/RRA/podlators-4.11.tar.gz",
+          "sha512": "ec634f3abceb4f7da95a17f7e9d1d9cf49b109d796c996ad3d093ccc92131d055312be82ec8f1bbb3d8a6d01077e621dec6ba5d5e1f92f377d70ab0d4d170241"
+        }
+      ]
+    }

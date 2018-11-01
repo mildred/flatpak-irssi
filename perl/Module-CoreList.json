@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Module-CoreList",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/Module-CoreList-5.20181020.tar.gz",
+          "sha512": "9ff2406aa73e6ce164c6002c52fdd398635e45a6d6986b19cf52e2bf070b57c141cbd8fe9de5de82c702931a95d5671dd53ff844bd010eb52fca646b5db96ae9"
+        }
+      ]
+    }

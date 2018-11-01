@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Text-ParseWords",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Text-ParseWords-3.30.tar.gz",
+          "sha512": "b148160cd3bd3eeda6f28e16d59a855fc846d314d116ebf88feebb574b452188ddf803b42894c6480324ba69515ef038121def9f6dd6302d31cb37af589344ec"
+        }
+      ]
+    }

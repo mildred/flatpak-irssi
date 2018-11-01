@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Glib-Object-Introspection",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.046.tar.gz",
+          "sha512": "0f4be15c6844b78998e47af6de5f72a387acee9cf20479774086607f73572ff2b2c26cd365604305ffd7c9f03adf82cf2d3913b3e53e679314e948021c046432"
+        }
+      ]
+    }

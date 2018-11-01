@@ -1,0 +1,23 @@
+    {
+      "name": "perl-File-Temp",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-Temp-0.2308.tar.gz",
+          "sha512": "a85c3b5d7f39cfd64c370d72cead15f2d6d713b995ceca71e8af359cd686ae685e1ac6ca91e49165b7e867b1d635d1f124e788b92b01f2bda0b3970f2ad983db"
+        }
+      ]
+    }

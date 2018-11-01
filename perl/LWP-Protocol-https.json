@@ -1,0 +1,23 @@
+    {
+      "name": "perl-LWP-Protocol-https",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.07.tar.gz",
+          "sha512": "4a07cd8a1c44e31781069a632a77f3af43747933420e831b4fd4a12faac7dc04f0c6b10ea773c3e14ecb66209a547b3587c0e3f481a55b9929db65f7b10343aa"
+        }
+      ]
+    }

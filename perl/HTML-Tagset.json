@@ -1,0 +1,23 @@
+    {
+      "name": "perl-HTML-Tagset",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-3.20.tar.gz",
+          "sha512": "b53c099a96b493c3d03c51fcf3d58dd3b830069583f2d07477175ea234c43e91a0b380c82a71126f971faf2768e832af34967d08d899db7653d65613d6530072"
+        }
+      ]
+    }

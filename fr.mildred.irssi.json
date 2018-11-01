@@ -1,0 +1,151 @@
+{
+    "app-id": "fr.mildred.irssi",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.30",
+    "sdk": "org.gnome.Sdk",
+    "command": "irssi",
+    "finish-args": [
+        "--share=network",
+        "--talk-name=org.freedesktop.Notifications",
+        "--filesystem=~/.irssi"
+    ],
+    "modules": [
+        {
+            "name": "irssi-appdata",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -D -m644 -t /app/share/metainfo fr.mildred.irssi.appdata.xml"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "fr.mildred.irssi.appdata.xml"
+                }
+            ]
+        },
+        {
+            "name": "irssi",
+            "buildsystem": "autotools",
+            "config-opts": [
+            ],
+            "post-install": [
+                "chmod 755 /app/lib/perl5/x86_64-linux/auto/Irssi/Irssi.so",
+                "chmod 755 /app/lib/perl5/x86_64-linux/auto/Irssi/Irc/Irc.so",
+                "chmod 755 /app/lib/perl5/x86_64-linux/auto/Irssi/UI/UI.so",
+                "chmod 755 /app/lib/perl5/x86_64-linux/auto/Irssi/TextUI/TextUI.so"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url":  "https://github.com/irssi/irssi.git",
+                    "tag":  "1.1.1"
+                }
+            ],
+            "modules": [
+                "perl.json"
+            ]
+        },
+        "perl/base.json",
+        "perl/Carp-Heavy.json",
+        "perl/Carp.json",
+        "perl/Compress-Raw-Bzip2.json",
+        "perl/Compress-Raw-Zlib.json",
+        "perl/constant.json",
+        "perl/CPAN-Meta-Requirements.json",
+        "perl/Cwd.json",
+        "perl/Data-Dumper.json",
+        "perl/Digest-base.json",
+        "perl/Digest-MD5.json",
+        "perl/Encode-Alias.json",
+        "perl/Encode.json",
+        "perl/Encode-Locale.json",
+        "perl/Exporter.json",
+        "perl/ExtUtils-CBuilder.json",
+        "perl/ExtUtils-Constant.json",
+        "perl/ExtUtils-MakeMaker.json",
+        "perl/File-Listing.json",
+        "perl/File-Path.json",
+        "perl/File-Spec.json",
+        "perl/File-Temp.json",
+        "perl/Getopt-Long.json",
+        "perl/HTML-Entities.json",
+        "perl/HTML-HeadParser.json",
+        "perl/HTML-Tagset.json",
+        "perl/HTTP-Cookies.json",
+        "perl/HTTP-Daemon.json",
+        "perl/HTTP-Date.json",
+        "perl/HTTP-Headers.json",
+        "perl/HTTP-Headers-Util.json",
+        "perl/HTTP-Negotiate.json",
+        "perl/HTTP-Request-Common.json",
+        "perl/HTTP-Request.json",
+        "perl/HTTP-Response.json",
+        "perl/HTTP-Status.json",
+        "perl/IO-Compress-Bzip2.json",
+        "perl/IO-Compress-Deflate.json",
+        "perl/IO-Compress-Gzip.json",
+        "perl/IO-File.json",
+        "perl/IO-Handle.json",
+        "perl/IO-HTML.json",
+        "perl/IO-Seekable.json",
+        "perl/IO-Select.json",
+        "perl/IO-Socket-INET.json",
+        "perl/IO-Socket.json",
+        "perl/IO-Uncompress-Bunzip2.json",
+        "perl/IO-Uncompress-Gunzip.json",
+        "perl/IO-Uncompress-Inflate.json",
+        "perl/IO-Uncompress-RawInflate.json",
+        "perl/IPC-Cmd.json",
+        "perl/List-Util.json",
+        "perl/Locale-Maketext-Simple.json",
+        "perl/LWP.json",
+        "perl/LWP-MediaTypes.json",
+        "perl/MIME-Base64.json",
+        "perl/MIME-QuotedPrint.json",
+        "perl/Module-CoreList.json",
+        "perl/Module-Load-Conditional.json",
+        "perl/Module-Load.json",
+        "perl/Module-Metadata.json",
+        "perl/Net-Domain.json",
+        "perl/Net-FTP.json",
+        "perl/Net-HTTP.json",
+        "perl/Params-Check.json",
+        "perl/parent.json",
+        "perl/Perl-OSType.json",
+        "perl/Pod-Escapes.json",
+        "perl/Pod-Man.json",
+        "perl/Pod-Simple.json",
+        "perl/Pod-Text.json",
+        "perl/Pod-Usage.json",
+        "perl/Scalar-Util.json",
+        "perl/Socket.json",
+        "perl/Storable.json",
+        "perl/Test-Harness.json",
+        "perl/Test.json",
+        "perl/Test-More.json",
+        "perl/Text-ParseWords.json",
+        "perl/Text-Wrap.json",
+        "perl/Time-Local.json",
+        "perl/Try-Tiny.json",
+        "perl/URI-Escape.json",
+        "perl/URI.json",
+        "perl/version.json",
+        "perl/WWW-RobotRules.json",
+        "perl/XSLoader.json",
+
+        "perl/IO-Socket-SSL.json",
+        "perl/LWP-Protocol-https.json",
+        "perl/Mozilla-CA.json",
+        "perl/Net-HTTPS.json",
+        "perl/Net-SSLeay.json",
+
+        "perl/ExtUtils-Depends.json",
+        "perl/ExtUtils-PkgConfig.json",
+        "perl/Glib.json",
+        "perl/Glib-Object-Introspection.json",
+        "perl/XML-Writer.json",
+        "perl/XML-Parser.json",
+        "perl/LWP-UserAgent.json"
+    ]
+}
+

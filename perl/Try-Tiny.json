@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Try-Tiny",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz",
+          "sha512": "f523736ab0504ca0f7150be312e62988c4b9473a9e8469b0746dc8364945e2922c64c92e95e6c2b5792c5d6399dabea3d00aa45c065155b95519d5658a07216c"
+        }
+      ]
+    }

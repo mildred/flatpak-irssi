@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Data-Dumper",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/Data-Dumper-2.172.tar.gz",
+          "sha512": "a29664de1a33f330acbbe11cecd3dfba455ad2f3fca26775fd75a1c2e506633e2e841149a385affc35feba8029dddeb00a38d762872304a429017bac758077ec"
+        }
+      ]
+    }

@@ -1,0 +1,23 @@
+    {
+      "name": "perl-HTML-Entities",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz",
+          "sha512": "9fded69219791af085018ffbe6737e74e370c543af52aa221aec174daf52d1b8d3cdd07f025176c0212ae572a924555262f2eefc73781f82cdb7d9cff58ae716"
+        }
+      ]
+    }

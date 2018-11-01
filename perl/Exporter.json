@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Exporter",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/T/TO/TODDR/Exporter-5.73.tar.gz",
+          "sha512": "da2cc1d7670f4407210b94e53bbbe632c43a4c95267e5c8bdcc7976d85e2e90e9da948d2e063d3137ab9924959bf615092c68b0606dc9f8906ceadca0bb44aee"
+        }
+      ]
+    }

@@ -1,0 +1,23 @@
+    {
+      "name": "perl-ExtUtils-Constant",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/ExtUtils-Constant-0.25.tar.gz",
+          "sha512": "f23be0b54a9bbfa13b6c07fafaf4c4a6cf633888140aaeccf9522a3ed76c3cafac2ee21cfc00fc9b1b3d2be1287dd5caebf803798e934de81877aa2d2ebccba0"
+        }
+      ]
+    }

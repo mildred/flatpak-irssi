@@ -1,0 +1,23 @@
+    {
+      "name": "perl-IO-Socket-INET",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-1.39.tar.gz",
+          "sha512": "5f42be505d75d712eef488b5604666964740bfe0f136e9d7edfe334463d19b582c2f0bf6a32878187aef64b9f435ee1f8f1ae49dd1c5f80445284df0016cf40d"
+        }
+      ]
+    }

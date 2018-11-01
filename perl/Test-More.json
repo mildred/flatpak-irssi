@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Test-More",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302140.tar.gz",
+          "sha512": "fb823470165e321f68bf761cb9fd31d9e2b3efb42a7ac25602f4a33624e3b8287f6210d502c6afe7723b5ad50c4b1fed2a1db166f151f9b9155d2bca4600766f"
+        }
+      ]
+    }

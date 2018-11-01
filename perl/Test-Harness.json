@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Test-Harness",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.42.tar.gz",
+          "sha512": "c9a3feec242772dd597be5e304dcf536c117dcad01cc2e22b8881e2bf24e5e3b1a119f3a29152a1602b6a2072b555f38c0fed8211198c2b2f6ee612df3d09b00"
+        }
+      ]
+    }

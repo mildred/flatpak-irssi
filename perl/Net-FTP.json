@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Net-FTP",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/S/SH/SHAY/libnet-3.11.tar.gz",
+          "sha512": "653a5ff6c7a7913bcf2948b4c5f0a6e849d2298c5ccb6451c6e54513c31110e533f803c298c46022b54585bf1af5392446b4db06ffbdacc3e98fab27979e030b"
+        }
+      ]
+    }

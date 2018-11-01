@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Scalar-Util",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-1.50.tar.gz",
+          "sha512": "f7ebe9ef079b91c9128a39174b57b482f0588dc901c0751894d02933d8c8f10bef02bc4ea34033bbd00075c655449b4538982190f4642ffa20d1f6109ba43760"
+        }
+      ]
+    }

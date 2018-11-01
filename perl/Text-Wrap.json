@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Text-Wrap",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/M/MU/MUIR/modules/Text-Tabs+Wrap-2013.0523.tar.gz",
+          "sha512": "870010e150d23ad1b9396642858f96a4f370a3d44dd7423884e103554f1e6a2e2ce70288ed2a773667cdebbaabecdd76b193954288be79e397ea2e029050da22"
+        }
+      ]
+    }

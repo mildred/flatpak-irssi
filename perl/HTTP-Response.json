@@ -1,0 +1,23 @@
+    {
+      "name": "perl-HTTP-Response",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.18.tar.gz",
+          "sha512": "46a5d4ee6af1bdb7b320ae8ad430b4dbff9a198a60d025703fa64a83284dfe6bee08041fc43372b6ea724ab973f84c3cbca5353d6158bdfbbed612577de61206"
+        }
+      ]
+    }

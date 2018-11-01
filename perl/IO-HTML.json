@@ -1,0 +1,23 @@
+    {
+      "name": "perl-IO-HTML",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/C/CJ/CJM/IO-HTML-1.001.tar.gz",
+          "sha512": "fd3780c854e2e4003c80d2399987bbde2ebcc8f110915a74326660036d0860f79123f924c3200bcfa163363d74f53ca742bde973549e5a554e63648ed55dac52"
+        }
+      ]
+    }

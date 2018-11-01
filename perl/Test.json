@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Test",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/J/JE/JESSE/Test-1.26.tar.gz",
+          "sha512": "96855c816411d4714db3d05dfd9686908fbaa65c807b23dcd310c7c69749c4f9812669f4d8c8ba9c7d83da552c9d67841d12edfb0e4adc7dbc46cbc5842109f2"
+        }
+      ]
+    }

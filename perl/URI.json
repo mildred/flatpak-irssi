@@ -1,0 +1,23 @@
+    {
+      "name": "perl-URI",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/E/ET/ETHER/URI-1.74.tar.gz",
+          "sha512": "b537bd09c355989a2bb1919e2c228cf189e57f993add4246fa482d8ee5ec814266c6fb3229befce2f294456ee784a819d9a54013c43a2ad41b5d8914fabf046b"
+        }
+      ]
+    }

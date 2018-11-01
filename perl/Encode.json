@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Encode",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Encode-2.98.tar.gz",
+          "sha512": "ee43ed683bc5d03cbc383a3cb56895a4f1cd366ef47031efd1ea0f10124be9f7f1f8c32eaab92155daf8df552624dc9629a18af5b2eab10f17c66e3a82bacd64"
+        }
+      ]
+    }

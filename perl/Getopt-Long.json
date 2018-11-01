@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Getopt-Long",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/J/JV/JV/Getopt-Long-2.50.tar.gz",
+          "sha512": "be4e8e3511d84f7919cd3df9e9aa9540dd522af47fc34bf4560a0212dd3c5d6571369ad502dfb4641918a43f8cecec3faa3d43adacfe706cdf9fe498d1ef0b6d"
+        }
+      ]
+    }

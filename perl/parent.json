@@ -1,0 +1,23 @@
+    {
+      "name": "perl-parent",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/C/CO/CORION/parent-0.237.tar.gz",
+          "sha512": "3da3b16eb8401a0c37aeadc4cf8518c9640f6c22edb837e652d33d68758932079f576b1ede52cdf28d35c3edb2f4e0f49462ad1567419487634349508d7b4794"
+        }
+      ]
+    }

@@ -1,0 +1,23 @@
+    {
+      "name": "perl-LWP",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/E/ET/ETHER/libwww-perl-6.36.tar.gz",
+          "sha512": "049da6dbd57dbfbceec878c1deb80e9eb3d45c0cc29535eb15804eb5038e0437122cd70ed92ed4313d1f1940cc34baa7a8f367401fb984c0f3688c31adf2c483"
+        }
+      ]
+    }

@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Pod-Simple",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/K/KH/KHW/Pod-Simple-3.35.tar.gz",
+          "sha512": "66a7a604875cf919419529624e83215693cb7485a3d16e57369debb59ae23bf51db4128e4f2845bce32f3ec94b5e02567bfb83a2e6f5caa19259509475125ef6"
+        }
+      ]
+    }

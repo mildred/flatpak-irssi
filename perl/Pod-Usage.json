@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Pod-Usage",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Usage-1.69.tar.gz",
+          "sha512": "56e2f6492c03892c95c74de2841a52b02be372842eaff32f84fdf8901fb73ebed6465a0215ccb8c9f2eaf23c7cafb5d044c77b69805cb364bcf71c4f24835025"
+        }
+      ]
+    }

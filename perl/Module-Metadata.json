@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Module-Metadata",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Metadata-1.000033.tar.gz",
+          "sha512": "77c5cd4cd130cbcf329e91afecae4bcfa78e776fa1b4e6398a382ea9c80c7ba39b2fdcd16649a2bb65dc8ea904839961667dcb7bf0005c1a61a1aa0578b49c17"
+        }
+      ]
+    }

@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Digest-MD5",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/G/GA/GAAS/Digest-MD5-2.55.tar.gz",
+          "sha512": "e921fe802566047479d4f33e65cdda0c316e0de06b316845bb48feaefdf5d0c602e330d42335f2cbe34d5b076aa0da2ed6daa7f998e9fda09cf9d66fb3c66811"
+        }
+      ]
+    }

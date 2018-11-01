@@ -1,0 +1,23 @@
+    {
+      "name": "perl-constant",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/constant-1.33.tar.gz",
+          "sha512": "f1ec947a321c6a04be39e1b1ec50e44a6e9edd0ed5c4698ff2aa33218a85cde3c37b4641e6c98ee7b06015d4dbb32f8bbeccfba87b8ce88a08da062c216e5ec2"
+        }
+      ]
+    }

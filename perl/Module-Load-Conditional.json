@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Module-Load-Conditional",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/Module-Load-Conditional-0.68.tar.gz",
+          "sha512": "4c6345cbb5881dc899f1e57df11111f17df71e595dd69ecea1fd8223add610433a00c37fd40a6a1ed2ebff8c7b7f2bc738c5671d568e952f7be5981ef0ff9742"
+        }
+      ]
+    }

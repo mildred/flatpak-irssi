@@ -1,0 +1,23 @@
+    {
+      "name": "perl-base",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/base-2.23.tar.gz",
+          "sha512": "788689215d93feaa7ffdea34923ea59d55245b59ef33f2c39eb25753387a7809fb8a01dbd36f6600ed015ff4cfd2e703dde9b36da82112563cff047007bd3f44"
+        }
+      ]
+    }

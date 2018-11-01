@@ -1,0 +1,23 @@
+    {
+      "name": "perl-IO-Uncompress-Inflate",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/P/PM/PMQS/IO-Compress-2.081.tar.gz",
+          "sha512": "233ab48b8629b162e15325ac1eee17a01748ad0937e14c43c8254f936a8c06f6fbae646ce74e0783d628b7a1a9da27c57a3ea9997577d885d27a6fa33e7b7f33"
+        }
+      ]
+    }

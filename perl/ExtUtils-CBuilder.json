@@ -1,0 +1,23 @@
+    {
+      "name": "perl-ExtUtils-CBuilder",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/A/AM/AMBS/ExtUtils-CBuilder-0.280230.tar.gz",
+          "sha512": "1a251ae3905ae2233ae68701e653fcf31434148f509762c737e3fb5841d671a87181ec0d35eb01037c474e65da0dbae0f10a142632982652e49b6b9a25de185d"
+        }
+      ]
+    }

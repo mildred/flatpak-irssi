@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Mozilla-CA",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/A/AB/ABH/Mozilla-CA-20180117.tar.gz",
+          "sha512": "8b4187f47638ba8d670b3f5cafc1de4040dfec1dde6a932411c79b41a8a454bcd3b66f9818c6d28135e29551ce93bc3ddb61e648c7810b30cb147ea0beaaedba"
+        }
+      ]
+    }

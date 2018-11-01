@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Perl-OSType",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Perl-OSType-1.010.tar.gz",
+          "sha512": "fdeabadb99bb5605b1e480a78d535ffde3392feaabd3ee227e3a9de0c66eab083687122091697847b9a42afc8d6e32de267926e5540a9027bd5a5ece699ead45"
+        }
+      ]
+    }

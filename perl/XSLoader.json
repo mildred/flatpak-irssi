@@ -1,0 +1,23 @@
+    {
+      "name": "perl-XSLoader",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/S/SA/SAPER/XSLoader-0.24.tar.gz",
+          "sha512": "25adeeac76a60ffb159211e8f0568430c270e8ba37626969ee10613bc44a0f5cc3bb62cb9bd44552997416480f7bae255c9c14ee239f18d3323db257f61c07dc"
+        }
+      ]
+    }

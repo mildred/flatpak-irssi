@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Time-Local",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Time-Local-1.28.tar.gz",
+          "sha512": "8e5e36f84bf9314e780687eaa1a48475ecc4c6cce4510b18d556f1d9ca9ec8b744ac45b4d7d1d9db9bb1a0f15886e8e4ac39aee0882d24fad5becab573b27b67"
+        }
+      ]
+    }

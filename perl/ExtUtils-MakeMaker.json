@@ -1,0 +1,23 @@
+    {
+      "name": "perl-ExtUtils-MakeMaker",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.34.tar.gz",
+          "sha512": "dbbd404ff65ea1fc9105a6aeb8ebc2250fa23bf1009cb56a900d049782a50db8b894278c0144d61dcea5e3b45558d6e16527ac60313bb6ff7127c1dff0558df6"
+        }
+      ]
+    }

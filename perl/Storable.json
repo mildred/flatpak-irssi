@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Storable",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/Storable-3.11.tar.gz",
+          "sha512": "da27b56dd422d4ae0bad225c0b0dcc91beff546d0cc537643da5530e8d50f421e88b960a2ac9f09867448e28a10743790d935aa0c1b6c8456d059430e1f7ffe9"
+        }
+      ]
+    }

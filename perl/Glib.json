@@ -1,0 +1,23 @@
+    {
+      "name": "perl-Glib",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make",
+        "make install"
+      ],
+      "post-install": [
+        "find /app/lib ! -writable -exec chmod u+w '{}' +"
+      ],
+      "ensure-writable": [
+        "/lib/perl5/*/*/perllocal.pod",
+        ".packlist"
+      ],
+      "sources": [
+        {
+          "type":   "archive",
+          "url":    "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-1.328.tar.gz",
+          "sha512": "ad6a4ceba82d4e29d55d45c4975f49717b2366167cb70ec0f0ac53eb188cc071a1ef55bcb6d675a8fab13514d44a9782ee194ada8f1af224877ad7cf8ad390f0"
+        }
+      ]
+    }
